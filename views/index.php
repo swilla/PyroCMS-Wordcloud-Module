@@ -11,5 +11,5 @@
       $(document).ready(function() {
         $("#wordcloud").jQCloud(word_list);
       });
-    </script>
+</script>
 <div id="wordcloud"></div>

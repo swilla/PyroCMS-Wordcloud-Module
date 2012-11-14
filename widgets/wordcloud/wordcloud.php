@@ -47,31 +47,6 @@ class Widget_Wordcloud extends Widgets
 	 */
 	public $version = '1.0';
 
-	public $fields = array(
-		array(
-			'field' => 'stream',
-			'label' => 'Stream',
-			'rules' => 'required'
-		),
-	);
-
-	public function form()
-	{
-		$this->load->driver('Streams');
-
-		$this->_streams = $this->streams->streams->get_streams('streams');
-		// Array for select
-		$stream_tree = array();
-		foreach ($this->_streams as $stream)
-		{
-			$stream_tree[$stream->stream_slug] = $stream->stream_name;
-		}
-
-		return array(
-			'stream_tree' => $stream_tree
-		);
-	}
-
 	/**
 	 * Runs code and logic required to display the widget.
 	 */
@@ -79,7 +54,7 @@ class Widget_Wordcloud extends Widgets
 	{
 		$this->load->driver('Streams');
 
-		$params = array('stream'=>$options['stream'], 'namespace'=>'streams');
+		$params = array('stream' => 'wordcloud', 'namespace' => 'wordcloud');
 
 		$entries = $this->streams->entries->get_entries($params);
 
