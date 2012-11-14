@@ -22,6 +22,19 @@ class Module_Wordcloud extends Module {
 			'backend'  => TRUE,
 			'skip_xss' => TRUE,
 			'menu'	  => 'content',
+			'sections' => array(
+					'wordcloud' => array(
+					    'name' => 'wordcloud:list_title',
+					    'uri' => 'admin/wordcloud',
+					    'shortcuts' => array(
+							array(
+							    'name' => 'wordcloud:add_title',
+							    'uri' => 'admin/wordcloud/create',
+							    'class' => 'add'
+							),
+					    ),
+					)
+				)
 		);
 
 		return $info;
@@ -33,7 +46,7 @@ class Module_Wordcloud extends Module {
 		$this->lang->load('wordcloud/wordcloud');
 
 		$this->streams->streams->add_stream('Wordcloud', 'wordcloud', 'wordcloud', 'wordcloud_', NULL);
-		$this->streams->streams->update_stream('wordcloud', 'wordcloud', array('stream_prefix' => 'wordcloud_', 'title_column' => 'text', 'sorting' => 'custom', 'view_options' => array('created','text', 'weight')));
+		$this->streams->streams->update_stream('wordcloud', 'wordcloud', array('stream_prefix' => 'wordcloud_', 'title_column' => 'text', 'sorting' => 'custom', 'view_options' => array('created','text', 'weight', 'link')));
 
 		$fields = array(
 					array(
