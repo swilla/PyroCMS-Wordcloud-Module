@@ -32,7 +32,7 @@ class Module_Wordcloud extends Module {
 		$this->load->driver('Streams');
 		$this->lang->load('wordcloud/wordcloud');
 
-		$this->streams->streams->add_stream('Wordcloud', 'wordcloud', 'wordcloud', 'wordcloud', NULL);
+		$this->streams->streams->add_stream('Wordcloud', 'wordcloud', 'wordcloud', 'wordcloud_', NULL);
 		$this->streams->streams->update_stream('wordcloud', 'wordcloud', array('stream_prefix' => 'wordcloud_', 'title_column' => 'text', 'sorting' => 'custom', 'view_options' => array('created','text', 'weight')));
 
 		$fields = array(
@@ -62,7 +62,7 @@ class Module_Wordcloud extends Module {
 		// Assign Child Fields
 		$this->streams->fields->assign_field('wordcloud', 'wordcloud', 'text', 		array('required' => true, 'instructions' => lang('wordcloud:instructions:text')));
 		$this->streams->fields->assign_field('wordcloud', 'wordcloud', 'weight', 	array('required' => true, 'instructions' => lang('wordcloud:instructions:weight')));
-		$this->streams->fields->assign_field('wordcloud', 'wordcloud', 'text', 		array('required' => false, 'instructions' => lang('wordcloud:instructions:link')));
+		$this->streams->fields->assign_field('wordcloud', 'wordcloud', 'link', 		array('required' => false, 'instructions' => lang('wordcloud:instructions:link')));
 		
 		return TRUE;
 	}
