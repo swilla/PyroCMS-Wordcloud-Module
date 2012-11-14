@@ -64,7 +64,7 @@ class Module_Wordcloud extends Module {
 		$this->streams->fields->assign_field('wordcloud', 'wordcloud', 'weight', 	array('required' => true, 'instructions' => lang('wordcloud:instructions:weight')));
 		$this->streams->fields->assign_field('wordcloud', 'wordcloud', 'text', 		array('required' => false, 'instructions' => lang('wordcloud:instructions:link')));
 		
-
+		return TRUE;
 	}
 
 	public function uninstall()

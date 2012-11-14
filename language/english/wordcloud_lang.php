@@ -1,5 +1,9 @@
 <?php
 
+$lang['wordcloud:list_title']				= 'Wordcloud';
+$lang['wordcloud:add_title']				= 'Add Word';
+$lang['wordcloud:edit_title']				= 'Edit Word';
+
 $lang['wordcloud:text']						= 'Text';
 $lang['wordcloud:weight']					= 'Weight';
 $lang['wordcloud:link']						= 'Link';
