@@ -2,9 +2,9 @@
       var word_list = new Array(
         <?php foreach($words['entries'] as $words):?>
             <?php if($words['last'] != 1):?>
-                { text: "<?php echo $entry['text'];?>", weight: <?php echo $entry['weight'];?>, link: "<?php echo $entry['link'];?>" },
+                { text: "<?php echo $words['text'];?>", weight: <?php echo $words['weight'];?>, link: "<?php echo $words['link'];?>" },
             <?php else: ?>
-                { text: "<?php echo $entry['text'];?>", weight: <?php echo $entry['weight'];?>, link: "<?php echo $entry['link'];?>" }
+                { text: "<?php echo $words['text'];?>", weight: <?php echo $words['weight'];?>, link: "<?php echo $words['link'];?>" }
             <?php endif; ?>
         <?php endforeach; ?>
       );
