@@ -45,7 +45,7 @@ class Module_Wordcloud extends Module {
 		$this->load->driver('Streams');
 		$this->lang->load('wordcloud/wordcloud');
 
-		$this->streams->streams->add_stream('Wordcloud', 'wordcloud', 'wordcloud', 'wordcloud_', NULL);
+		$this->streams->streams->add_stream('wordcloud', 'wordcloud', 'wordcloud', 'wordcloud_', NULL);
 		$this->streams->streams->update_stream('wordcloud', 'wordcloud', array('stream_prefix' => 'wordcloud_', 'title_column' => 'text', 'sorting' => 'custom', 'view_options' => array('created','text', 'weight', 'link')));
 
 		$fields = array(
